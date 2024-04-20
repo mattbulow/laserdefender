@@ -12,13 +12,13 @@ GameObject:
   - component: {fileID: 4720938183020857339}
   - component: {fileID: -5969582447986031167}
   - component: {fileID: -4223021398269316943}
-  - component: {fileID: -9001897255778924847}
+  - component: {fileID: 3865103429490108952}
   - component: {fileID: 6117055625203979581}
   - component: {fileID: 4050154564415228868}
   - component: {fileID: -5411669464213396620}
   m_Layer: 7
-  m_Name: Enemy0
-  m_TagString: Untagged
+  m_Name: Enemy2
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,7 +79,7 @@ MonoBehaviour:
   onDestroyScore: 100
   hitEffect: {fileID: 9215111341330321014, guid: a7e8db9aa77342644b3fc9f0000a369b, type: 3}
   applyCameraShake: 0
---- !u!114 &-9001897255778924847
+--- !u!114 &3865103429490108952
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,15 +88,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 6125577235973191544}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fa8834acfa73c24b9c2e29246298f3d, type: 3}
+  m_Script: {fileID: 11500000, guid: d49101e390aa3fb40929418a9a0a7845, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 5400494482936635645, guid: 57aa00095dfa1f74c81f02ceda94bbfa, type: 3}
-  projectileSpeed: -8
-  projectileLifetime: 2
-  fireRate: 2
-  useAI: 1
-  fireRateVariance: 0.5
+  projectilePrefab: {fileID: 5400494482936635645, guid: f02c91f21a02a7040bf11178d129492c, type: 3}
+  projectileSpeed: 2.5
+  projectileLifetime: 4
+  fireRate: 2.5
+  fireRateVariance: 0.2
+  isFiring: 1
 --- !u!212 &6117055625203979581
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -138,7 +138,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 1918fb6a587d61547a5e7ed7967a648d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 20ca7a4318dbfb8469e9962aa899ff06, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -208,6 +208,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0007882416, y: 0.007882297}
+  m_Offset: {x: 0, y: -0.032681078}
   serializedVersion: 2
-  m_Radius: 0.3664709
+  m_Radius: 0.39158157

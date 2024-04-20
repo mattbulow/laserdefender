@@ -14,11 +14,11 @@ public class Player : MonoBehaviour
     Vector2 minBounds;
     Vector2 maxBounds;
 
-    Shooter shooter;
+    PlayerShooter shooter;
 
     private void Awake()
     {
-        shooter = GetComponent<Shooter>();
+        shooter = GetComponent<PlayerShooter>();
     }
 
     void Start()

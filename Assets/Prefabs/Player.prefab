@@ -67,8 +67,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  onDestroyScore: 0
   hitEffect: {fileID: 9215111341330321014, guid: a7e8db9aa77342644b3fc9f0000a369b, type: 3}
-  cameraShake: {fileID: 0}
   applyCameraShake: 1
 --- !u!114 &2020087157614004311
 MonoBehaviour:
@@ -86,8 +86,6 @@ MonoBehaviour:
   projectileSpeed: 12
   projectileLifetime: 5
   fireRate: 0.2
-  useAI: 0
-  fireRateVariance: 0
 --- !u!212 &6607198696388255997
 SpriteRenderer:
   m_ObjectHideFlags: 0

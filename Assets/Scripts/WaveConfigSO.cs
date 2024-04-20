@@ -8,24 +8,21 @@ using UnityEngine;
 public class WaveConfigSO : ScriptableObject
 {
     [SerializeField] List<GameObject> enemyPrefabs;
-    [SerializeField] Transform pathPrefab;
+    [SerializeField] List<Vector2> waypoints;
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] float timeBetweenEnemySpawns = 0.7f;
     [SerializeField] float spawnTimeVariance = 0.1f;
     [SerializeField] float minimumSpawnTime = 0.2f;
 
-    public Transform GetStartingWaypoint()
+    public void SetWaypoints(List<Vector2> wp) { waypoints = wp; }
+
+    public Vector2 GetStartingWaypoint()
     {
-        return pathPrefab.GetChild(0);
+        return waypoints[0];
     }
 
-    public List<Transform> GetWaypoints()
+    public List<Vector2> GetWaypoints()
     {
-        List<Transform> waypoints = new List<Transform>();
-        foreach (Transform child in pathPrefab)
-        {
-            waypoints.Add(child);
-        }
         return waypoints;
     }
 

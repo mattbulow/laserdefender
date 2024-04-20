@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3866497559564317058}
   - component: {fileID: 2584465105581564700}
-  - component: {fileID: -8141032721877985717}
+  - component: {fileID: -3279355679545549990}
   - component: {fileID: 8734139746563537303}
   - component: {fileID: 4174939216910992696}
-  m_Layer: 6
-  m_Name: Projectile_Player
+  m_Layer: 7
+  m_Name: Projectile_Enemy1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
---- !u!114 &-8141032721877985717
+--- !u!114 &-3279355679545549990
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,7 +57,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5400494482936635645}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c97622d755e477a4aba61c9892103867, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a5a87873a2c74c4b821b91947d094da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &8734139746563537303
@@ -101,10 +101,10 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3931aa28b4219da4db0bcc4c8f10f822, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d9fea4f84fa0add4ea1b3077f23c9c29, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 0.09, y: 0.37}
   m_AdaptiveModeThreshold: 0.5

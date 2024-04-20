@@ -3,18 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shooter : MonoBehaviour
+public class PlayerShooter : MonoBehaviour
 {
-    [Header("General")]
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float projectileLifetime = 5f;
     [SerializeField] float fireRate = 0.2f;
     
-    [Header("AI")]
-    [SerializeField] bool useAI = false;
-    [SerializeField] float fireRateVariance = 0f;
-
     Coroutine firingCoroutine;
     AudioPlayer audioPlayer;
 
@@ -25,14 +20,6 @@ public class Shooter : MonoBehaviour
 
     bool isFiring = false;
     public void SetIsFiring(bool value) { isFiring = value; }
-
-    void Start()
-    {
-        if (useAI)
-        {
-            isFiring = true;
-        }
-    }
 
     void Update()
     {
@@ -64,8 +51,7 @@ public class Shooter : MonoBehaviour
 
             audioPlayer.PlayShootingClip(transform.position);
 
-            yield return new WaitForSeconds(UnityEngine.Random.Range(fireRate- fireRateVariance,
-                                                                     fireRate - fireRateVariance));
+            yield return new WaitForSeconds(fireRate);
         }
     }
 }

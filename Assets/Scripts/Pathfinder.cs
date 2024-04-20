@@ -6,7 +6,7 @@ public class Pathfinder : MonoBehaviour
 {
     EnemySpawner enemySpawner;
     WaveConfigSO waveConfig;
-    List<Transform> waypoints;
+    List<Vector2> waypoints;
     int waypointIndex = 0;
 
     private void Awake()
@@ -18,7 +18,7 @@ public class Pathfinder : MonoBehaviour
     {
         waveConfig = enemySpawner.GetCurrentWave();
         waypoints = waveConfig.GetWaypoints();
-        transform.position = waypoints[waypointIndex].position;
+        transform.position = waypoints[waypointIndex];
     }
 
     void Update()
@@ -31,7 +31,7 @@ public class Pathfinder : MonoBehaviour
         if(waypointIndex < waypoints.Count)
         {
             // move towards next waypoint
-            Vector3 targetPosition = waypoints[waypointIndex].position;
+            Vector3 targetPosition = waypoints[waypointIndex];
             float delta = waveConfig.GetMoveSpeed() * Time.deltaTime;
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, delta);
             if (transform.position == targetPosition)

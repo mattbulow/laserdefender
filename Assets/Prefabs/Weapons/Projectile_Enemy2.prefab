@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3866497559564317058}
   - component: {fileID: 2584465105581564700}
-  - component: {fileID: -8141032721877985717}
+  - component: {fileID: 7080115179033669235}
   - component: {fileID: 8734139746563537303}
   - component: {fileID: 4174939216910992696}
-  m_Layer: 6
-  m_Name: Projectile_Player
+  m_Layer: 7
+  m_Name: Projectile_Enemy2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,8 +30,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -5.06, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
---- !u!114 &-8141032721877985717
+--- !u!114 &7080115179033669235
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,9 +57,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5400494482936635645}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c97622d755e477a4aba61c9892103867, type: 3}
+  m_Script: {fileID: 11500000, guid: 0daffe2f35c31634ab4419fcc9494d51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 451715035657442690, guid: c8d926774f4449d42873af08d3446bab, type: 3}
+  rotateRate: 180
+  flashRate: 0.5
+  scaleMin: 0.7
+  scaleMax: 0.85
 --- !u!212 &8734139746563537303
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -101,7 +106,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3931aa28b4219da4db0bcc4c8f10f822, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fd8aabe384d9a39478afe73e83d08c62, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
