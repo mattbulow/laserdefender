@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2584465105581564700}
   - component: {fileID: 7080115179033669235}
   - component: {fileID: 8734139746563537303}
-  - component: {fileID: 4174939216910992696}
+  - component: {fileID: 6601569871341794890}
   m_Layer: 7
   m_Name: Projectile_Enemy2
   m_TagString: Untagged
@@ -60,7 +60,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0daffe2f35c31634ab4419fcc9494d51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 451715035657442690, guid: c8d926774f4449d42873af08d3446bab, type: 3}
   rotateRate: 180
   flashRate: 0.5
   scaleMin: 0.7
@@ -117,8 +116,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &4174939216910992696
-CapsuleCollider2D:
+--- !u!58 &6601569871341794890
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -150,5 +149,5 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.09, y: 0.37}
-  m_Direction: 0
+  serializedVersion: 2
+  m_Radius: 0.13218953

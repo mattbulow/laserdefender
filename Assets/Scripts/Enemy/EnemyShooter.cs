@@ -11,6 +11,8 @@ public class EnemyShooter : MonoBehaviour
     [SerializeField] float projectileLifetime = 5f;
     [SerializeField] float fireRate = 2f;
     [SerializeField] float fireRateVariance = 0.2f;
+    [Header("Projectile 3")]
+    //[SerializeField] float rotateSpeed = -6f;
 
     //[Header("Projectile Type 2")]
     //[SerializeField] GameObject type2Prefab;
@@ -64,7 +66,8 @@ public class EnemyShooter : MonoBehaviour
                     if (projMotion2 != null) { projMotion2.SetSpeed(projectileSpeed); }
                     break;
                 case "Enemy3":
-                    //ProjectileEnemy3 projMotion3 = projectile.GetComponent<ProjectileEnemy3>();
+                    ProjectileEnemy3 projMotion3 = projectile.GetComponent<ProjectileEnemy3>();
+                    if (projMotion3 != null) { projMotion3.SetSpeed(projectileSpeed); }
                     break;
                 case "Enemy4":
                     //ProjectileEnemy4 projMotion4 = projectile.GetComponent<ProjectileEnemy4>();
