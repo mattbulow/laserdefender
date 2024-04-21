@@ -40,8 +40,13 @@ public class Health : MonoBehaviour
                 if (gameObject.tag == "Player")
                 {
                     levelManager.LoadGameOver();
+                    gameObject.SetActive(false);
                 }
-                Destroy(gameObject);
+                else
+                {
+                    Destroy(gameObject);
+                }
+                
             }
 
             //Increment score if not the player

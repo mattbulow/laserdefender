@@ -7,7 +7,7 @@ public class PathGenerator : MonoBehaviour
     [SerializeField] float centerCircleSize = 0.2f;
 
     List<Vector2> waypoints = new List<Vector2>();
-    EdgeCollider2D edgeCollider;
+    //EdgeCollider2D edgeCollider;
 
     EnemySpawner spawner;
     Camera mainCamera;
@@ -28,17 +28,17 @@ public class PathGenerator : MonoBehaviour
 
     private void Start()
     {
-        edgeCollider = gameObject.AddComponent<EdgeCollider2D>();
+        //edgeCollider = gameObject.AddComponent<EdgeCollider2D>();
         //edgeCollider.enabled = false;
-        UpdateWaveWithWaypoints();
+        //UpdateWaveWithWaypoints();
 
     }
 
-    public void UpdateWaveWithWaypoints()
+    public void UpdateWaveWithWaypoints(int idx)
     {
         GenerateWaypoints();
-        spawner.SetWaypoints(waypoints);
-        edgeCollider.SetPoints(waypoints);
+        spawner.SetWaypoints(idx,waypoints);
+        //edgeCollider.SetPoints(waypoints);
     }
 
      void GenerateWaypoints()
@@ -89,14 +89,5 @@ public class PathGenerator : MonoBehaviour
         point.y = (point.y + 1) / 2;
         return point;
     }
-
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(1))
-        {
-            UpdateWaveWithWaypoints();
-        }
-    }
-
 
 }

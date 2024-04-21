@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] WaveConfigSO waveObj;
+    [SerializeField] List<WaveConfigSO> waves;
     [SerializeField] float timeBetweenWaves = 0f;
+
+    WaveConfigSO currentWave;
 
     PathGenerator pathGenerator;
 
@@ -15,17 +17,17 @@ public class EnemySpawner : MonoBehaviour
         pathGenerator = GetComponent<PathGenerator>();
         if (pathGenerator == null) { Debug.Log("pathGenerator is NULL"); }
     }
-    public void SetWaypoints(List<Vector2> waypoints)
+    public void SetWaypoints(int idx, List<Vector2> waypoints)
     {
-        if (waveObj != null)
+        if (waves[idx] != null)
         {
-            waveObj.SetWaypoints(waypoints);
+            waves[idx].SetWaypoints(waypoints);
         }
     }
 
     public WaveConfigSO GetCurrentWave()
     {
-        return waveObj;
+        return currentWave;
     }
 
     void Start()
@@ -37,14 +39,19 @@ public class EnemySpawner : MonoBehaviour
     {
         while (true) 
         {
-            pathGenerator.UpdateWaveWithWaypoints();
-            for (int n = 0; n < waveObj.GetEnemyCount(); ++n)
+            // We will choose which wave to run randomly. Each wave represents a different enemy type
+            int waveIdx = UnityEngine.Random.Range(0, waves.Count);
+            currentWave = waves[waveIdx];
+
+            pathGenerator.UpdateWaveWithWaypoints(waveIdx);
+            // We will get a random number of enemies to spawn from the wave object
+            for (int n = 0; n < waves[waveIdx].GetEnemyCount(); ++n)
             {
-                Instantiate(waveObj.GetEnemyPrefab(n),
-                            waveObj.GetStartingWaypoint(),
+                Instantiate(currentWave.GetEnemyPrefab(),
+                            currentWave.GetStartingWaypoint(),
                             Quaternion.identity,
                             transform);
-                yield return new WaitForSeconds(waveObj.GetRandomSpawnTime());
+                yield return new WaitForSeconds(currentWave.GetRandomSpawnTime());
             }
             yield return new WaitForSeconds(timeBetweenWaves);
         }

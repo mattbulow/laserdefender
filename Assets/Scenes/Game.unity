@@ -480,7 +480,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c74c67e7d13923946a01acddee0d8fd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveObj: {fileID: 11400000, guid: f6537ab833b869d42990606b5e7d7c07, type: 2}
+  waves:
+  - {fileID: 11400000, guid: f6537ab833b869d42990606b5e7d7c07, type: 2}
+  - {fileID: 11400000, guid: 382dec07b00bddb4ab860a7ddb8fe112, type: 2}
+  - {fileID: 11400000, guid: 0f385bb4031b00442a40af1d956e2ae2, type: 2}
+  - {fileID: 11400000, guid: 26d2c8c80c4416d4cab1d194149c5cb3, type: 2}
   timeBetweenWaves: 0
 --- !u!4 &330201645
 Transform:

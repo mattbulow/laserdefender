@@ -7,12 +7,15 @@ using UnityEngine;
 
 public class WaveConfigSO : ScriptableObject
 {
-    [SerializeField] List<GameObject> enemyPrefabs;
+    [SerializeField] GameObject enemyPrefab;
     [SerializeField] List<Vector2> waypoints;
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] float timeBetweenEnemySpawns = 0.7f;
     [SerializeField] float spawnTimeVariance = 0.1f;
     [SerializeField] float minimumSpawnTime = 0.2f;
+    [SerializeField][Range(1, 20)] int enemyCountMin;
+    [SerializeField][Range(1, 20)] int enemyCountMax;
+
 
     public void SetWaypoints(List<Vector2> wp) { waypoints = wp; }
 
@@ -33,12 +36,18 @@ public class WaveConfigSO : ScriptableObject
     
     public int GetEnemyCount()
     {
-        return enemyPrefabs.Count;
+        if (enemyCountMin > enemyCountMax)
+        {
+            int temp = enemyCountMin;
+            enemyCountMin = enemyCountMax;
+            enemyCountMax = temp;
+        }
+        return Random.Range(enemyCountMin,enemyCountMax+1);
     }
 
-    public GameObject GetEnemyPrefab(int index) 
+    public GameObject GetEnemyPrefab() 
     {
-        return enemyPrefabs[index];
+        return enemyPrefab;
     }
 
     public float GetRandomSpawnTime()

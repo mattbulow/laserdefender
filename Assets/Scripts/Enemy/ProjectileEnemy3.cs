@@ -6,14 +6,8 @@ using UnityEngine.Scripting.APIUpdating;
 public class ProjectileEnemy3 : MonoBehaviour
 {
     [SerializeField] int rotateRate = 120;
-    [SerializeField] float flashRate = 1f;
-    [SerializeField] float scaleMin = 0.5f;
-    [SerializeField] float scaleMax = 0.7f;
 
     float speed = 1f;
-    Vector2 scale;
-    bool increaseScale = true;
-    float rotateDirection;
     Vector2 targetPosition;
 
     Transform player;
@@ -22,9 +16,7 @@ public class ProjectileEnemy3 : MonoBehaviour
 
     private void Awake()
     {
-        scale = new Vector2(scaleMin, scaleMin);
-        rotateDirection = Mathf.Sign(Random.Range(-1, 1));
-        player = FindAnyObjectByType<Player>().transform;
+        player = FindAnyObjectByType<Player>(FindObjectsInactive.Include).transform;
     }
 
     private void Start()
@@ -41,7 +33,6 @@ public class ProjectileEnemy3 : MonoBehaviour
 
     void Update()
     {
-        //Flash();
         Rotate();
         Move();
     }
@@ -60,31 +51,5 @@ public class ProjectileEnemy3 : MonoBehaviour
         float angle = Mathf.MoveTowardsAngle(transform.eulerAngles.z, targetAngle, rotateRate * Time.deltaTime);
         // Apply the rotation around the Z-axis
         transform.rotation = Quaternion.Euler(0f, 0f, angle);
-    }
-
-    void Flash()
-    {
-        
-        if (transform.localScale.x<= scaleMin)
-        {
-            increaseScale = true;
-        }
-        else if (transform.localScale.x>= scaleMax)
-        {
-            increaseScale = false;
-        }
-        if (increaseScale)
-        {
-            scale.x += flashRate * Time.deltaTime;
-            scale.y = scale.x;
-        }
-        else
-        {
-            scale.x -= flashRate * Time.deltaTime;
-            scale.y = scale.x;
-        }
-        transform.localScale = scale;
-
-
     }
 }

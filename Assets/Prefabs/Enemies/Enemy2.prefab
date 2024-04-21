@@ -94,8 +94,8 @@ MonoBehaviour:
   projectilePrefab: {fileID: 5400494482936635645, guid: f02c91f21a02a7040bf11178d129492c, type: 3}
   projectileSpeed: 2.5
   projectileLifetime: 4
-  fireRate: 2.5
-  fireRateVariance: 0.2
+  fireRate: 5.5
+  fireRateVariance: 1
   isFiring: 1
 --- !u!212 &6117055625203979581
 SpriteRenderer:

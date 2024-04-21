@@ -24,7 +24,7 @@ public class ProjectileEnemy2 : MonoBehaviour
     {
         scale = new Vector2(scaleMin, scaleMin);
         rotateDirection = Mathf.Sign(Random.Range(-1, 1));
-        player = FindAnyObjectByType<Player>().transform;
+        player = FindAnyObjectByType<Player>(FindObjectsInactive.Include).transform;
     }
 
     private void Start()
