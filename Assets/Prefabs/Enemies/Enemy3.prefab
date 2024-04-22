@@ -92,10 +92,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 5400494482936635645, guid: 611c4ade4504d1f42b14ad73169a4f0a, type: 3}
-  projectileSpeed: 3
+  projectileSpeed: 2.5
   projectileLifetime: 5
-  fireRate: 7
-  fireRateVariance: 1
+  fireRate: 4
+  fireRateVariance: 2
   isFiring: 1
 --- !u!212 &6117055625203979581
 SpriteRenderer:

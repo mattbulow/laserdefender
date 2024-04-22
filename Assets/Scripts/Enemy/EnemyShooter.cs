@@ -52,6 +52,10 @@ public class EnemyShooter : MonoBehaviour
 
     IEnumerator FireContinuously()
     {
+        //startup delay
+        yield return new WaitForSeconds(UnityEngine.Random.Range(fireRate - fireRateVariance,
+                                                                 fireRate + fireRateVariance));
+
         while (true)
         {
             GameObject projectile = Instantiate(projectilePrefab, transform.position,Quaternion.identity);
@@ -74,9 +78,6 @@ public class EnemyShooter : MonoBehaviour
                     break;
             }
             
-
-            
-
             Destroy(projectile,projectileLifetime);
 
             audioPlayer.PlayShootingClip(transform.position);

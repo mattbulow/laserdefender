@@ -485,7 +485,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 382dec07b00bddb4ab860a7ddb8fe112, type: 2}
   - {fileID: 11400000, guid: 0f385bb4031b00442a40af1d956e2ae2, type: 2}
   - {fileID: 11400000, guid: 26d2c8c80c4416d4cab1d194149c5cb3, type: 2}
-  timeBetweenWaves: 0
+  timeBetweenWaves: 1
 --- !u!4 &330201645
 Transform:
   m_ObjectHideFlags: 0
@@ -1128,6 +1128,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2320343247230190691, guid: c4dc5496773322d4d8d8eb568c5ba616, type: 3}
+      propertyPath: enemySpawner
+      value: 
+      objectReference: {fileID: 330201644}
     - target: {fileID: 3677723510890498359, guid: c4dc5496773322d4d8d8eb568c5ba616, type: 3}
       propertyPath: m_Name
       value: ScoreKeeper

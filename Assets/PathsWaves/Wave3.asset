@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 6125577235973191544, guid: 78b8cb65ce76dea42a1b0a25c4e69c61, type: 3}
   waypoints:
-  - {x: -6.1928654, y: -5.4306407}
-  - {x: -1.4670889, y: 1.7277491}
-  - {x: -6.1928654, y: 4.1817307}
-  moveSpeed: 3
-  timeBetweenEnemySpawns: 0.8
+  - {x: -2.2788544, y: 10.999999}
+  - {x: 1.8518257, y: 0.85431933}
+  - {x: 0.82247436, y: 10.999999}
+  moveSpeed: 2.8
+  timeBetweenEnemySpawns: 0.5
   spawnTimeVariance: 0
   minimumSpawnTime: 0.1
-  enemyCountMin: 2
-  enemyCountMax: 4
+  enemyCountMin: 3
+  enemyCountMax: 5

@@ -8,8 +8,9 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] List<WaveConfigSO> waves;
     [SerializeField] float timeBetweenWaves = 0f;
 
-    WaveConfigSO currentWave;
+    int difficultyLevel = 0;
 
+    WaveConfigSO currentWave;
     PathGenerator pathGenerator;
 
     private void Awake()
@@ -23,6 +24,11 @@ public class EnemySpawner : MonoBehaviour
         {
             waves[idx].SetWaypoints(waypoints);
         }
+    }
+
+    public void SetDifficulty(int difficulty)
+    {
+        difficultyLevel = difficulty;
     }
 
     public WaveConfigSO GetCurrentWave()
@@ -40,7 +46,7 @@ public class EnemySpawner : MonoBehaviour
         while (true) 
         {
             // We will choose which wave to run randomly. Each wave represents a different enemy type
-            int waveIdx = UnityEngine.Random.Range(0, waves.Count);
+            int waveIdx = UnityEngine.Random.Range(0, Mathf.Clamp(difficultyLevel,0, waves.Count-1)+1);
             currentWave = waves[waveIdx];
 
             pathGenerator.UpdateWaveWithWaypoints(waveIdx);

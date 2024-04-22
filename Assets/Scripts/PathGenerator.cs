@@ -44,16 +44,15 @@ public class PathGenerator : MonoBehaviour
      void GenerateWaypoints()
     {
         waypoints = new List<Vector2>();
-        waypoints = new List<Vector2>();
         // Point 1
         // Random point along perimeter of screen.
-        waypoints.Add(mainCamera.ViewportToWorldPoint(GetPointOnScreenPerimeter()));
+        waypoints.Add(mainCamera.ViewportToWorldPoint(GetPointOnScreenPerimeter(0)));
         // Point 2
         // Random point in a circle (oval) around center of screen
         waypoints.Add(mainCamera.ViewportToWorldPoint(GetPointAroundCenter()));
         // Point 3
         // Same as point one, random point along perimeter of screen
-        waypoints.Add(mainCamera.ViewportToWorldPoint(GetPointOnScreenPerimeter()));
+        waypoints.Add(mainCamera.ViewportToWorldPoint(GetPointOnScreenPerimeter(-1)));
 
     }
 
@@ -63,9 +62,19 @@ public class PathGenerator : MonoBehaviour
         return NormalizePoint(Random.insideUnitCircle * centerCircleSize);
     }
 
-    Vector2 GetPointOnScreenPerimeter()
+    Vector2 GetPointOnScreenPerimeter(float yStartPoint)
     {
-        Vector2 point = Random.insideUnitCircle;
+        // for starting waypoint we only points that are above player, maybe y>=0 
+        Vector2 point = Vector2.zero;
+        bool findPoints = true;
+        while (findPoints)
+        {
+            point = Random.insideUnitCircle;
+            if (point.y >= yStartPoint)
+            {
+                findPoints = false;
+            }
+        }        
         point = NormalizePoint(point);
 
         float screenOffset = 0.05f;
